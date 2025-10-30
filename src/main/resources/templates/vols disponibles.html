@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Vols - Aero Smart</title>
+    <link rel="stylesheet" href="../shared-static/css/style.css">
+</head>
+<body class="admin-dashboard">
+    <!-- Navigation -->
+    <nav class="admin-nav">
+        <div class="nav-brand">
+            <h2>Aero Smart</h2>
+        </div>
+        <div class="nav-links">
+            <a href="admin-flights.html" class="nav-link active">Vols disponibles</a>
+            <a href="add-flight.html" class="nav-link">Ajouter vol</a>
+            <a href="reservations.html" class="nav-link">Confirmation</a>
+        </div>
+        <div class="nav-user">
+            <span>Admin</span>
+            <button class="btn-logout" onclick="logout()">Déconnexion</button>
+        </div>
+    </nav>
+
+    <!-- Contenu Principal -->
+    <main class="admin-main">
+        <div class="page-header">
+            <h1>Bienvenue dans votre espace d'administration</h1>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" id="searchFlight" placeholder="Rechercher un vol..." onkeyup="searchFlights()">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <button class="btn-primary" onclick="location.href='add-flight.html'">
+                    ➕ Ajouter vol
+                </button>
+            </div>
+        </div>
+
+        <!-- Liste des Vols -->
+        <div class="flights-grid" id="flightsGrid">
+            <!-- Vols chargés dynamiquement -->
+            <div class="flight-card">
+                <div class="flight-route">
+                    <h3>Tanger – Agadir</h3>
+                    <p>Départ: 9:30 | Arrivée: 11:00 | Vol: AF349</p>
+                </div>
+                <div class="flight-date">
+                    <span>19/10/2025</span>
+                </div>
+                <div class="flight-actions">
+                    <button class="btn-secondary" onclick="viewFlightDetails('AF349')">Consulter</button>
+                </div>
+            </div>
+
+            <div class="flight-card">
+                <div class="flight-route">
+                    <h3>Casablanca – Agadir</h3>
+                    <p>Départ: 14:30 | Arrivée: 16:00 | Vol: AF345</p>
+                </div>
+                <div class="flight-date">
+                    <span>19/10/2025</span>
+                </div>
+                <div class="flight-actions">
+                    <button class="btn-secondary" onclick="viewFlightDetails('AF345')">Consulter</button>
+                </div>
+            </div>
+
+            <!-- Plus de vols... -->
+        </div>
+    </main>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

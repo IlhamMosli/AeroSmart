@@ -1,0 +1,9 @@
+com\aerosmart\flight\model\FlightStatus.class
+com\aerosmart\flight\config\DataInitializer.class
+com\aerosmart\flight\model\Flight.class
+com\aerosmart\flight\controller\FlightController.class
+com\aerosmart\flight\repository\FlightRepository.class
+com\aerosmart\flight\controller\WebController.class
+com\aerosmart\flight\service\FlightService.class
+com\aerosmart\flight\SimpleController.class
+com\aerosmart\flight\FlightServiceApplication.class

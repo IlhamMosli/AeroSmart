@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Vol - Aero Smart</title>
+    <link rel="stylesheet" href="../shared-static/css/style.css">
+</head>
+<body class="admin-dashboard">
+    <nav class="admin-nav">
+        <div class="nav-brand">
+            <h2>Aero Smart</h2>
+        </div>
+        <div class="nav-links">
+            <a href="admin-flights.html" class="nav-link">Vols disponibles</a>
+            <a href="add-flight.html" class="nav-link">Ajouter vol</a>
+            <a href="reservations.html" class="nav-link">Confirmation</a>
+        </div>
+        <div class="nav-user">
+            <span>Admin</span>
+            <button class="btn-logout" onclick="logout()">Déconnexion</button>
+        </div>
+    </nav>
+
+    <main class="admin-main">
+        <div class="page-header">
+            <h1>Détails du vol</h1>
+            <div class="flight-header">
+                <div class="flight-times">
+                    <span class="departure-time">12:45</span>
+                    <span class="duration">1 hour 25 minutes</span>
+                    <span class="arrival-time">14:30</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flight-details">
+            <div class="detail-section">
+                <h3>Informations du vol</h3>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <label>Numéro de vol:</label>
+                        <span>AF345</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Capacité (passagers):</label>
+                        <span>150</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Statut:</label>
+                        <span class="status delayed">Retardé</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Itinéraire</h3>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <label>Aéroport de départ:</label>
+                        <span>Mohammed V de Casablanca</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Aéroport d'arrivée:</label>
+                        <span>Al Massira d'Agadir</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Date de départ:</label>
+                        <span>19/10/2025</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Date d'arrivée:</label>
+                        <span>19/10/2025</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Heure de départ:</label>
+                        <span>12:45</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Heure d'arrivée:</label>
+                        <span>14:30</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Informations d'embarquement</h3>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <label>Porte d'embarquement:</label>
+                        <span>Porte A114</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Début d'embarquement:</label>
+                        <span>12:00</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Fin d'embarquement:</label>
+                        <span>14:45</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="editFlight('AF345')">Modifier</button>
+                <button class="btn-danger" onclick="deleteFlight('AF345')">Supprimer</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

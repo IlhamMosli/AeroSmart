@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Vol - Aero Smart</title>
+    <link rel="stylesheet" href="../shared-static/css/style.css">
+</head>
+<body class="admin-dashboard">
+    <nav class="admin-nav">
+        <div class="nav-brand">
+            <h2>Aero Smart</h2>
+        </div>
+        <div class="nav-links">
+            <a href="admin-flights.html" class="nav-link">Vols disponibles</a>
+            <a href="add-flight.html" class="nav-link active">Ajouter vol</a>
+            <a href="reservations.html" class="nav-link">Confirmation</a>
+        </div>
+        <div class="nav-user">
+            <span>Admin</span>
+            <button class="btn-logout" onclick="logout()">Déconnexion</button>
+        </div>
+    </nav>
+
+    <main class="admin-main">
+        <div class="page-header">
+            <h1>Ajouter un nouveau vol</h1>
+            <p>Remplissez le formulaire pour créer un nouveau vol dans le système</p>
+        </div>
+
+        <form class="flight-form" id="addFlightForm">
+            <div class="form-section">
+                <h3>Information de base de vol</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="flightNumber">Numéro de vol *</label>
+                        <input type="text" id="flightNumber" name="flightNumber" placeholder="EX: AF345" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="capacity">Capacité (passagers) *</label>
+                        <input type="number" id="capacity" name="capacity" placeholder="EX: 250" min="1" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="departureAirport">Aéroport de départ *</label>
+                        <select id="departureAirport" name="departureAirport" required>
+                            <option value="">Sélectionner</option>
+                            <option value="CMN">Mohammed V - Casablanca</option>
+                            <option value="AGA">Al Massira - Agadir</option>
+                            <option value="RAK">Marrakech-Menara</option>
+                            <option value="TNG">Ibn Batouta - Tanger</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="arrivalAirport">Aéroport d'arrivée *</label>
+                        <select id="arrivalAirport" name="arrivalAirport" required>
+                            <option value="">Sélectionner</option>
+                            <option value="CMN">Mohammed V - Casablanca</option>
+                            <option value="AGA">Al Massira - Agadir</option>
+                            <option value="RAK">Marrakech-Menara</option>
+                            <option value="TNG">Ibn Batouta - Tanger</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="departureDate">Date de départ *</label>
+                        <input type="date" id="departureDate" name="departureDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="arrivalDate">Date d'arrivée *</label>
+                        <input type="date" id="arrivalDate" name="arrivalDate" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="departureTime">Heure de départ *</label>
+                        <input type="time" id="departureTime" name="departureTime" placeholder="EX: 8:00" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="arrivalTime">Heure d'arrivée *</label>
+                        <input type="time" id="arrivalTime" name="arrivalTime" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Informations d'embarquement</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gate">Porte d'embarquement</label>
+                        <input type="text" id="gate" name="gate" placeholder="EX: B31">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="status">Statut du vol *</label>
+                        <select id="status" name="status" required>
+                            <option value="PLANNED">Planifié</option>
+                            <option value="ON_TIME">À l'heure</option>
+                            <option value="DELAYED">Retardé</option>
+                            <option value="CANCELLED">Annulé</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="boardingStart">Début d'embarquement</label>
+                        <input type="time" id="boardingStart" name="boardingStart">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="boardingEnd">Fin d'embarquement</label>
+                        <input type="time" id="boardingEnd" name="boardingEnd">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" onclick="location.href='admin-flights.html'">Annuler</button>
+                <button type="submit" class="btn-primary">Ajouter le vol</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
